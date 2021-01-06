@@ -9,9 +9,10 @@ public class BinarySearchImpl {
     @Autowired
     private SearchAlgo searchAlgo;
 
-    public BinarySearchImpl(SearchAlgo searchAlgo) {
+   /* Using no setter and no constructor dependency.
+   public BinarySearchImpl(SearchAlgo searchAlgo) {
         this.searchAlgo = searchAlgo;
-    }
+    }*/
 
     public String performBinarySearch() {
         //This will return type of sorting algo used..
