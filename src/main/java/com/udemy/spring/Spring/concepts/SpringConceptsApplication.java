@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 public class SpringConceptsApplication {
 
 	public static void main(String[] args) {
-		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringConceptsApplication.class);
+		AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringConceptsApplication.class);
 
 		/*BinarySearchImpl binarySearch = new BinarySearchImpl(new MergeSort());
 		System.out.println(binarySearch.performBinarySearch());*/
@@ -19,6 +19,8 @@ public class SpringConceptsApplication {
 		//To get Binary search from Spring..
 		BinarySearchImpl binarySearch = applicationContext.getBean(BinarySearchImpl.class);
 		System.out.println(binarySearch.performBinarySearch());
+
+		applicationContext.close();
 	}
 
 }
