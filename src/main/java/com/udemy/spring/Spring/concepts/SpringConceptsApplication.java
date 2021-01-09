@@ -1,15 +1,17 @@
 package com.udemy.spring.Spring.concepts;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 //Loose coupling b/w beans and dependencies.
-@SpringBootApplication
+@Configuration
+@ComponentScan("com.udemy.spring.Spring.concepts")
 public class SpringConceptsApplication {
 
 	public static void main(String[] args) {
-		ApplicationContext applicationContext = SpringApplication.run(SpringConceptsApplication.class, args);
+		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringConceptsApplication.class);
 
 		/*BinarySearchImpl binarySearch = new BinarySearchImpl(new MergeSort());
 		System.out.println(binarySearch.performBinarySearch());*/
