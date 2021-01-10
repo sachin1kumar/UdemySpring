@@ -8,6 +8,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -23,6 +24,12 @@ public class SpringConceptsApplicationTests {
     public void testPositiveCase() {
         when(dataService.getData()).thenReturn(new int[] {1, 2, 3});
         assertTrue(checkPositiveNum.isPositive());
+    }
+
+    @Test
+    public void testNagativeCase() {
+        when(dataService.getData()).thenReturn(new int[] {-1, 2, 3});
+        assertFalse(checkPositiveNum.isPositive());
     }
 
 }
